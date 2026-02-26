@@ -1,0 +1,80 @@
+<!--Main HTML file for Smart Nutrition Fruit Advisor Application-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title of the Desktop Application -->
+    <title>Smart Nutrition Fruit Advisor</title>
+
+    <!-- Link to external CSS file for GUI styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Main heading of the application -->
+<h1>Smart Nutrition Fruit Advisor</h1>
+
+<!-- Navigation bar for page switching -->
+<div class="navbar">
+    <!-- Button to navigate to Home Page -->
+    <button onclick="showPage('home')">Home</button>
+
+    <!-- Button to navigate to Recommendation Page -->
+    <button onclick="showPage('recommend')">My Recommendation</button>
+
+    <!-- Button to navigate to Nutrition Analysis Page -->
+    <button onclick="showPage('analysis')">Nutrition Analysis</button>
+</div>
+
+<!-- Home Page Section -->
+<div id="homePage">
+    <h2>Fruit List</h2>
+
+    <!-- Button to sort fruit list alphabetically -->
+    <button onclick="sortFruits()">Sort A-Z</button>
+
+    <!-- Button to fetch fruit data from FruityVice API -->
+    <button onclick="loadFruits()">Fetch Fruits</button>
+
+    <!-- List to display fetched fruit data -->
+    <ul id="fruitList"></ul>
+</div>
+
+<!-- My Recommendation Page Section -->
+<div id="recommendPage" style="display:none;">
+    <h2>My Recommendation</h2>
+
+    <!-- List to display recommended fruits -->
+    <ul id="recommendList"></ul>
+    <br>
+
+    <!-- Input box to update selected fruit -->
+    <input type="text" id="updateFruit" placeholder="Enter new fruit name">
+
+    <!-- Button to update selected recommended fruit -->
+    <button onclick="updateFruit()">Update Selected</button>
+</div>
+
+<!-- Nutrition Analysis Page Section -->
+<div id="analysisPage" style="display:none;">
+    <h2>Nutrition Analysis</h2>
+
+    <!-- Button to calculate average calories -->
+    <button onclick="calculateAverage()">Average Calories</button>
+
+    <!-- Button to identify fruit with highest sugar -->
+    <button onclick="highestSugar()">Highest Sugar Fruit</button>
+
+    <!-- Display result for highest sugar -->
+    <p id="sugarResult"></p>
+
+    <!-- Display result for average calories -->
+    <p id="avgResult"></p>
+</div>
+
+<!-- Link to JavaScript file for application logic -->
+<script src="renderer.js"></script>
+
+</body>
+</html>
